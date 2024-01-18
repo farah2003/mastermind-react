@@ -1,0 +1,166 @@
+
+[
+    {
+      "title_page_en": "page1",
+      "title_page_ar": "صفحة١",
+  
+      "questions": [
+        {
+          "title_en": "Have you been part of the Masterpieces program previously?",
+          "title_ar": "هل كنت جزء من برنامج روائع سابقاً؟",
+          "type": 2,
+          "answer": null,
+          "layout": "full",
+          "options": [
+            {
+              "value": "yes",
+              "title_en": "Yes",
+              "title_ar": "نعم",
+              "is_sub": true,
+              "sub_question": [
+                {
+                  "answer": null,
+                  "layout": "full",
+                  "title_en": "If your answer is yes, mention the years you participated in the program?",
+  
+                  "title_ar": "إذا كانت إجابتك نعم، اذكر السنوات التي شاركت بها في البرنامج؟",
+                  "type": 4,
+                  "option": [
+                    {
+                      "title_en": "2017",
+                      "title_ar": "٢٠١٧",
+                      "is_sub": false
+                    },
+                    {
+                      "title_en": "2018",
+                      "title_ar": "٢٠١٨",
+                      "is_sub": false
+                    },
+                    {
+                      "title_en": "2019",
+                      "title_ar": "٢٠١٩",
+                      "is_sub": false
+                    },
+                    {
+                      "title_en": "2020",
+                      "title_ar": "٢٠٢٠",
+                      "is_sub": false
+                    },
+                    {
+                      "title_en": "2021",
+                      "title_ar": "٢٠٢١",
+                      "is_sub": false
+                    },
+                    {
+                      "title_en": "2022",
+                      "title_ar": "٢٠٢٢",
+                      "is_sub": false
+                    }
+                  ],
+                  "validations": {
+                    "required": true,
+                    "max_select": 3,
+                    "min_select": 1,
+                    "errorMessage": "Please select an option"
+                  }
+                }
+              ]
+            },
+            {
+              "value": "no",
+              "title_en": "No",
+              "title_ar": "لا",
+              "is_sub": false
+            }
+          ],
+          "validations": {
+            "required": true,
+            "errorMessage": "Please select an option"
+          }
+        },
+        {
+          "title_en": "Have you participated in a literal work in your educational institution?",
+          "title_ar": "هل شاركت في عمل أدبي في مؤسستك التعليمية؟",
+          "type": 1,
+          "options": [
+            {
+              "value": "yes",
+              "title_en": "Yes",
+              "title_ar": "نعم",
+              "is_sub": false
+            },
+            {
+              "value": "no",
+              "title_en": "No",
+              "title_ar": "لا",
+              "is_sub": false
+            }
+          ],
+          "answer": null,
+          "layout": "full",
+          "validations": {
+            "required": true,
+            "errorMessage": "Please select an option"
+          }
+        }
+      ]
+    },
+    {
+      "title_page_en": "page2",
+      "title_page_ar": "صفحة٣",
+      "questions": [
+        {
+          "title_en": "Are you interested in pursuing literal arts as a:",
+          "title_ar": "هل أنت مهتم بمتابعة الفنون الأدبية كـ",
+          "type": 4,
+          "options": [
+            {
+              "value": "hobby",
+              "title_en": "Hobby",
+              "title_ar": "هواية",
+              "is_sub": false
+            },
+            {
+              "value": "aspiring_artist",
+              "title_en": "Aspiring Artist",
+              "title_ar": "فنان طموح",
+              "is_sub": false
+            },
+            {
+              "value": "professional_artist",
+              "title_en": "Professional Artist",
+              "title_ar": "فنان محترف",
+              "is_sub": false
+            }
+          ],
+          "validations": {
+            "required": true,
+                              "max_select": 3,
+                              "min_select": 1,
+            "errorMessage": "Please select an option"
+          },
+          "layout": "full",
+          "answer": null
+        },
+  
+  
+  {
+                  "title_en": "Are you interested in other art fields? (mention it)",
+                  "title_ar": "هل أنت مهتم بمجالات فنية أخرى؟ (اذكرها)",
+                  "layout": "full",
+                  "answer": null,
+                  "type": 3,
+                  "options": [],
+                  "validations": {
+                    "required": true,
+                    "maxLength": 50,
+                    "minLength": 5,
+                    "errorMessage": "field is required and min character is 5 and max character is 50"
+                  }
+                }
+  
+  
+      ]
+    }
+  ]
+  
