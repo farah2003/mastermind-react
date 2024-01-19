@@ -1,0 +1,8 @@
+.textInput {
+  border: none;
+  outline: none;
+  padding: 18px;
+  border-radius: 15px;
+  background: rgba(103, 72, 157, 0.1);
+  width: 520px;
+}

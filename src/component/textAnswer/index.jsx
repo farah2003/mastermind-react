@@ -1,4 +1,5 @@
-const TextAnswer = ({ question, textAnswerValue, setData }) => {
+import './style.css';
+const TextAnswer = ({ question, textAnswerValue, setData, data }) => {
   return (
     <div>
       <input
@@ -8,13 +9,13 @@ const TextAnswer = ({ question, textAnswerValue, setData }) => {
         value={textAnswerValue}
         onChange={(e) => {
           setData({
-            [question.type]: e.target.value,
+            ...data,
+            [question.type]: {
+              value: e.target.value,
+            },
           });
         }}
         placeholder='Write here'
-        required={question.validations.required}
-        maxLength={question.validations.maxLength}
-        minLength={question.validations.minLength}
       />
     </div>
   );

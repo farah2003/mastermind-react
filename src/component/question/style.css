@@ -1,0 +1,13 @@
+.errorMessage {
+  color: red;
+}
+.question-wrapper {
+  margin: 40px 0;
+}
+.question-title {
+  font-size: 16.891px;
+  font-weight: 500;
+}
+.subQuestion {
+  color: rgba(30, 30, 28, 0.44);
+}

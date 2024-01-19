@@ -1,0 +1,23 @@
+.yes-no-answer {
+  background: #fff;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.31);
+  padding: 18px 32px;
+  color: #1e1e1c;
+  font-weight: 500;
+  font-family: Inter;
+  font-size: 16.891px;
+  cursor: pointer;
+}
+
+.input {
+  background: transparent;
+  position: absolute;
+  cursor: pointer;
+  border: none;
+  opacity: 0;
+}
+
+.yes-no-answer.checked {
+  border-color: #67489d;
+}
