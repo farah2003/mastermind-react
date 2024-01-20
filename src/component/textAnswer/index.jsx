@@ -1,12 +1,12 @@
 import './style.css';
-const TextAnswer = ({ question, textAnswerValue, setData, data }) => {
+const TextAnswer = ({ question, setData, data }) => {
   return (
     <div>
       <input
         className='textInput'
         type='text'
         name={question.type}
-        value={textAnswerValue}
+        value={data[question.type]?.value}
         onChange={(e) => {
           setData({
             ...data,
