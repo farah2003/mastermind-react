@@ -14,8 +14,8 @@ const Question = ({ question, setData, data, isSubQuestion }) => {
           data={data}
           isSubQuestion={isSubQuestion}
         />
-        {data[question.type] && data[question.type]['error'] && (
-          <p className='errorMessage'>{data[question.type]['error']}</p>
+        {data[question.type]?.error && (
+          <p className='errorMessage'>{data[question.type].error}</p>
         )}
       </div>
     </div>

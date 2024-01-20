@@ -9,6 +9,7 @@ const QuestionTypes = ({ question, setData, data, isSubQuestion }) => {
     isSub: false,
     question: {},
   });
+  console.log(subQuestion.isSub, 'xxxxxxx');
   // eslint-disable-next-line default-case
   switch (question.type) {
     case 1:
