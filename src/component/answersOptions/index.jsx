@@ -1,22 +1,25 @@
+import { useSubQuestion } from '../../context/subQuestionContext';
 import './style.css';
 const AnswersOptions = ({
   option,
   index,
   value,
-  setSubQuestion,
+
   setData,
   data,
   name,
 }) => {
+  const { setSubQuestion } = useSubQuestion();
   const isChecked =
     (data[name]?.value && data[name].value === option.value) ||
     data[name]?.value === option.title_en;
 
   const handleOptionClick = () => {
-    setSubQuestion({
-      isSub: option.is_sub,
-      question: option.is_sub ? option.sub_question[0] : {},
-    });
+    if (option.is_sub) {
+      setSubQuestion({
+        question: option.sub_question[0],
+      });
+    }
 
     setData({
       ...data,

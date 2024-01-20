@@ -1,15 +1,11 @@
-import { useState } from 'react';
 import './style.css';
 import AnswersOptions from '../answersOptions';
 import TextAnswer from '../textAnswer';
 import Question from '../question';
+import { useSubQuestion } from '../../context/subQuestionContext';
 
 const QuestionTypes = ({ question, setData, data, isSubQuestion }) => {
-  const [subQuestion, setSubQuestion] = useState({
-    isSub: false,
-    question: {},
-  });
-  console.log(subQuestion.isSub, 'xxxxxxx');
+  const { subQuestion } = useSubQuestion();
   // eslint-disable-next-line default-case
   switch (question.type) {
     case 1:
@@ -22,7 +18,6 @@ const QuestionTypes = ({ question, setData, data, isSubQuestion }) => {
                   <AnswersOptions
                     option={option}
                     index={index}
-                    setSubQuestion={setSubQuestion}
                     setData={setData}
                     data={data}
                     name={`sub-${question.type}`}
@@ -35,7 +30,6 @@ const QuestionTypes = ({ question, setData, data, isSubQuestion }) => {
                     <AnswersOptions
                       option={option}
                       index={index}
-                      setSubQuestion={setSubQuestion}
                       setData={setData}
                       data={data}
                       name={question.type}
@@ -66,7 +60,6 @@ const QuestionTypes = ({ question, setData, data, isSubQuestion }) => {
                 <AnswersOptions
                   option={option}
                   index={index}
-                  setSubQuestion={setSubQuestion}
                   setData={setData}
                   data={data}
                   name={question.type}
@@ -75,9 +68,9 @@ const QuestionTypes = ({ question, setData, data, isSubQuestion }) => {
             })}
           </div>
           <div>
-            {subQuestion.isSub && (
+            {data[question.type]?.value === 'yes' && (
               <Question
-                isSubQuestion={subQuestion.isSub}
+                isSubQuestion={true}
                 question={subQuestion.question}
                 setData={setData}
                 data={data}
