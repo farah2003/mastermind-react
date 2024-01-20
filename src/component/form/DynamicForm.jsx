@@ -5,6 +5,7 @@ import logo from '../../assets/images/form-logo.png';
 import sectionImage from '../../assets/images/section-image.png';
 import Question from '../question';
 import { useState } from 'react';
+
 const DynamicForm = ({ formData }) => {
   const [step, setStep] = useState(0);
   const [data, setData] = useState({});
@@ -17,7 +18,7 @@ const DynamicForm = ({ formData }) => {
   const formValidation = (formStep) => {
     return formStep.questions.every((question) => {
       if (question.validations && question.validations.required) {
-        const value = data[question.type] && data[question.type]['value'];
+        const value = data[question.type] && data[question.type].value;
 
         if (!value) {
           setData({
@@ -75,6 +76,7 @@ const DynamicForm = ({ formData }) => {
             </h1>
           </div>
         </div>
+
         <div className='form-content'>
           {formData[step].questions.map((question) => {
             return (
@@ -82,6 +84,7 @@ const DynamicForm = ({ formData }) => {
             );
           })}
         </div>
+
         <div className='form-footer'>
           {step === 0 ? (
             <button className='next-btn' onClick={() => handleNextStep()}>

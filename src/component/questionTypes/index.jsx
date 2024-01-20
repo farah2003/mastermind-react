@@ -2,7 +2,9 @@ import { useState } from 'react';
 import './style.css';
 import AnswersOptions from '../answersOptions';
 import TextAnswer from '../textAnswer';
-const QuestionTypes = ({ question, setData, data }) => {
+import Question from '../question';
+
+const QuestionTypes = ({ question, setData, data, isSubQuestion }) => {
   const [subQuestion, setSubQuestion] = useState({
     isSub: false,
     question: {},
@@ -13,21 +15,33 @@ const QuestionTypes = ({ question, setData, data }) => {
     case 4:
       return (
         <div className='answers'>
-          {question.options.map((option, index) => {
-            return (
-              <>
-                <AnswersOptions
-                  option={option}
-                  question={question}
-                  index={index}
-                  setSubQuestion={setSubQuestion}
-                  setData={setData}
-                  data={data}
-                  name={question.type}
-                />
-              </>
-            );
-          })}
+          {isSubQuestion
+            ? question.option.map((option, index) => {
+                return (
+                  <AnswersOptions
+                    option={option}
+                    index={index}
+                    setSubQuestion={setSubQuestion}
+                    setData={setData}
+                    data={data}
+                    name={`sub-${question.type}`}
+                  />
+                );
+              })
+            : question.options.map((option, index) => {
+                return (
+                  <>
+                    <AnswersOptions
+                      option={option}
+                      index={index}
+                      setSubQuestion={setSubQuestion}
+                      setData={setData}
+                      data={data}
+                      name={question.type}
+                    />
+                  </>
+                );
+              })}
         </div>
       );
 
@@ -50,10 +64,8 @@ const QuestionTypes = ({ question, setData, data }) => {
               return (
                 <AnswersOptions
                   option={option}
-                  question={question}
                   index={index}
                   setSubQuestion={setSubQuestion}
-                  subQuestion={subQuestion}
                   setData={setData}
                   data={data}
                   name={question.type}
@@ -63,28 +75,12 @@ const QuestionTypes = ({ question, setData, data }) => {
           </div>
           <div>
             {subQuestion.isSub && (
-              <div>
-                <div className='question-wrapper'>
-                  <h1 className={`question-title subQuestion`}>
-                    {subQuestion.question.title_en}
-                  </h1>
-                </div>
-                <div className='answers'>
-                  {subQuestion.question.option.map((option, index) => {
-                    return (
-                      <AnswersOptions
-                        option={option}
-                        question={subQuestion.question}
-                        index={index}
-                        setSubQuestion={setSubQuestion}
-                        setData={setData}
-                        data={data}
-                        name={`sub-${subQuestion.question.type}`}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
+              <Question
+                isSubQuestion={subQuestion.isSub}
+                question={subQuestion.question}
+                setData={setData}
+                data={data}
+              />
             )}
           </div>
         </div>

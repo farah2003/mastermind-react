@@ -1,4 +1,4 @@
-.yes-no-answer {
+.answer-option {
   background: #fff;
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.31);
@@ -18,6 +18,6 @@
   opacity: 0;
 }
 
-.yes-no-answer.checked {
+.answer-option.checked {
   border-color: #67489d;
 }
