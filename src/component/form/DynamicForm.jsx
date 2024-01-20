@@ -15,7 +15,7 @@ const DynamicForm = ({ formData }) => {
       setStep(step + 1);
     }
   };
-  const formValidation = (formStep) => {
+  const formValidation = (formStep, data) => {
     return formStep.questions.every((question) => {
       if (question.validations && question.validations.required) {
         const value = data[question.type] && data[question.type].value;
